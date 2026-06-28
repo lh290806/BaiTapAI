@@ -13,14 +13,16 @@ Dự án là một tập hợp các ứng dụng mô phỏng và trực quan hó
 *(Dưới đây là hình ảnh hoạt động thực tế của từng phân hệ thuật toán)*
 
 ### Phân Hệ 1: Tô Màu Bản Đồ (CSP)
-> 📸 ****
+> 📸 **Quá trình duyệt màu đồ thị:** <br>
+> <img width="602" height="752" alt="Demo Tô Màu Bản Đồ" src="https://github.com/user-attachments/assets/622117d4-55eb-4a92-8c4f-68e41ea7acc7" />
 
 ### Phân Hệ 2: Trò Chơi Tic-Tac-Toe AI
-> 📸 **[BẠN CHÈN LINK ẢNH HOẶC GIF DEMO TIC-TAC-TOE VÀO ĐÂY]**
+> 📸 **Thuật toán Alpha-Beta Pruning:** <br>
+> <img width="600" alt="Demo Tic-Tac-Toe" src="https://github.com/user-attachments/assets/39597db3-0e0c-4daf-8c34-d38bd91a7415" />
 
 ### Phân Hệ 3: Agent Máy Hút Bụi Thông Minh
-> 📸 <img width="1920" height="1032" alt="Demo Máy Hút Bụi" src="https://github.com/user-attachments/assets/0cd17b8f-426c-4e40-b12b-3e5172ccbd34" />
-
+> 📸 **Mô phỏng đường đi của Agent:** <br>
+> <img width="1920" height="1032" alt="Demo Máy Hút Bụi" src="https://github.com/user-attachments/assets/0cd17b8f-426c-4e40-b12b-3e5172ccbd34" />
 ---
 
 ## 🧩 Khám Phá Các Phân Hệ Thuật Toán
