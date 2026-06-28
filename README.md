@@ -19,7 +19,7 @@ Dự án là một tập hợp các ứng dụng mô phỏng và trực quan hó
 > 📸 **[BẠN CHÈN LINK ẢNH HOẶC GIF DEMO TIC-TAC-TOE VÀO ĐÂY]**
 
 ### Phân Hệ 3: Agent Máy Hút Bụi Thông Minh
-> 📸 ![Demo Máy Hút Bụi](https://github.com/user-attachments/assets/055018a1-c8eb-4cf9-92c9-9472ed62be94)
+> 📸 ![Demo Máy Hút Bụi](https://github.com/user-attachments/assets/0cd17b8f-426c-4e40-b12b-3e5172ccbd34)
 
 ---
 
