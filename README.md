@@ -1,54 +1,68 @@
-# 🧹 Dự án Mô phỏng Agent Máy hút bụi thông minh (Vacuum Cleaner Agent)
+# 🤖 Đồ Án Trí Tuệ Nhân Tạo (Artificial Intelligence Toolkit)
 
-Dự án phát triển một chương trình mô phỏng Agent máy hút bụi tự động tìm đường đi tối ưu để làm sạch các vết rác trên bản đồ ô lưới (Grid Map). Dự án sử dụng ngôn ngữ **Python** kết hợp thư viện đồ họa **Tkinter** để trực quan hóa quá trình tìm kiếm và di chuyển của Agent thông qua nhiều chiến lược giải thuật khác nhau.
+![Python Version](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue?style=for-the-badge&logo=python)
+![Framework](https://img.shields.io/badge/UI-Tkinter-orange?style=for-the-badge&logo=python)
+![Academic Project](https://img.shields.io/badge/Project-UTEX%20Academic-red?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
----
-
-## 🚀 Tính năng nổi bật
-- **Bản đồ trực quan (GUI Tkinter):** Hiển thị Agent (máy hút bụi), các ô có rác, ô trống và các chướng ngại vật (vật cản).
-- **Log lịch sử thời gian thực:** Hiển thị chi tiết từng bước đi, hành động (`UP`, `DOWN`, `LEFT`, `RIGHT`, `CLEAN`) và chi phí ước lượng của Agent trên giao diện.
-- **Đa dạng giải thuật:** Tích hợp đầy đủ từ các thuật toán tìm kiếm mù (Uninformed Search) đến tìm kiếm có tri thức và tìm kiếm địa phương (Local Search).
+Dự án là một tập hợp các ứng dụng mô phỏng và trực quan hóa các giải thuật Trí Tuệ Nhân Tạo kinh điển từ nền tảng lý thuyết đến thực hành đồ họa trực quan. Hệ thống được xây dựng bằng ngôn ngữ **Python** kết hợp với thư viện giao diện **Tkinter**, hỗ trợ đắc lực cho việc giảng dạy, học tập và nghiên cứu các chiến lược tối ưu hóa, tìm kiếm không gian trạng thái và lý thuyết trò chơi đối kháng.
 
 ---
 
-## 🧠 Các Giải thuật Tìm kiếm triển khai trong Dự án
+## 🚀 Giao Diện Demo Trực Quan
+*(Dưới đây là hình ảnh hoạt động thực tế của từng phân hệ thuật toán)*
 
-Dự án bao gồm 2 nhóm chiến lược tìm kiếm chính:
+### Phân Hệ 1: Tô Màu Bản Đồ (CSP)
+> 📸 ****
 
-### 1. Chiến lược Tìm kiếm Không gian Trạng thái (Cơ bản)
-- **BFS Kiểu 1 & Kiểu 2 (Breadth-First Search):** Tìm kiếm theo chiều rộng, đảm bảo tìm được chuỗi hành động ngắn nhất đến khi sạch sàn.
-- **DFS (Depth-First Search):** Tìm kiếm theo chiều sâu, ưu tiên đi hết một nhánh trước khi quay lui.
-- **UCS (Uniform Cost Search):** Tìm kiếm với chi phí đồng đều, tối ưu hóa theo tổng giá trị hành động.
-- **A* Search:** Tìm kiếm có chứng thực sử dụng hàm Heuristic (ước lượng khoảng cách đến các ô rác) để định hướng đường đi tối ưu nhất.
+### Phân Hệ 2: Trò Chơi Tic-Tac-Toe AI
+> 📸 **[BẠN CHÈN LINK ẢNH HOẶC GIF DEMO TIC-TAC-TOE VÀO ĐÂY]**
 
-### 2. Chiến lược Tìm kiếm Địa phương (Local Search - Nâng cao)
-- **Simple Hill Climbing:** Leo đồi đơn giản, chọn bước đi đầu tiên tốt hơn trạng thái hiện tại.
-- **Steepest Ascent Hill Climbing:** Leo đồi dốc nhất, quét toàn bộ lân cận và chọn bước đi tối ưu nhất (chi phí thấp nhất).
-- **Stochastic Hill Climbing:** Leo đồi ngẫu nhiên, chọn ngẫu nhiên một trong số các trạng thái lân cận tốt hơn.
-- **Random Restart Hill Climbing:** Leo đồi khởi động lại ngẫu nhiên. Nếu rơi vào cực tiểu cục bộ (kẹt), thuật toán tự động reset về vị trí ban đầu và bắt đầu lượt tìm kiếm mới (giới hạn theo `MAX_RESTART`).
-- **Local Beam Search:** Tìm kiếm chùm cục bộ. Duy trì và phát triển song song một chùm gồm $k$ trạng thái tốt nhất ở mỗi bước lặp để tránh bị kẹt và mở rộng không gian tìm kiếm.
+### Phân Hệ 3: Agent Máy Hút Bụi Thông Minh
+> 📸 ![Demo Máy Hút Bụi](https://github.com/user-attachments/assets/055018a1-c8eb-4cf9-92c9-9472ed62be94)
 
 ---
 
-## 🛠️ Cấu trúc Trạng thái và Ràng buộc Bài toán
-- **Trạng thái (State):** Được định nghĩa dưới dạng một bộ ba tuple `(x, y, grid)` bao gồm vị trí hiện tại của Agent `(x, y)` và trạng thái ma trận các ô rác/vật cản `grid`.
-- **Hàm chi phí (`get_cost`):** Hàm heuristic đánh giá mức độ hiệu quả (số lượng rác còn lại trên bản đồ). Mục tiêu của Agent là đưa chi phí này về `0` (Goal Test thành công).
-- **Ràng buộc hành động:** Để tối ưu hóa hiệu năng di chuyển, khi Agent đứng tại ô có rác (`grid[x][y] == 1`), hệ thống áp đặt ràng buộc bắt buộc Agent phải thực hiện hành động `CLEAN` trước khi thực hiện các bước di chuyển khác.
+## 🧩 Khám Phá Các Phân Hệ Thuật Toán
+
+### 1. Phân Hệ Tô Màu Bản Đồ TP.HCM (Constraint Satisfaction Problem - CSP)
+Ứng dụng giải quyết bài toán Thỏa Mãn Ràng Buộc dựa trên bản đồ thu nhỏ gồm 7 quận/huyện trọng điểm tại TP.HCM (Phú Nhuận, Bình Thạnh, Quận 1, Quận 3, Quận 4, Quận 5, Quận 10). Mục tiêu là tô màu các quận sao cho không có hai quận lân cận nào trùng màu nhau bằng cách sử dụng tối đa 4 màu.
+* **Tính năng chính:** Cho phép chọn thuật toán, theo dõi từng bước duyệt màu ngẫu nhiên/thử nghiệm, tự động cập nhật trạng thái "Hợp lệ", "Quay lui (Backtrack)" hoặc "Xung đột" lên màn hình theo thời gian thực.
+* **Các thuật toán tích hợp:**
+    * **Backtracking:** Thuật toán quay lui kiểm tra điều kiện ràng buộc thuần túy.
+    * **Forward Checking:** Kỹ thuật nhìn kiểm tra trước để thu hẹp sớm miền giá trị của các biến lân cận chưa tô.
+    * **Backtracking kết hợp AC-3:** Thuật toán duy trì tính nhất quán của cung (Arc Consistency) để tối ưu hóa không gian tìm kiếm.
+    * **Min-Conflicts:** Thuật toán tìm kiếm địa phương tối ưu, lặp lại việc chọn ngẫu nhiên biến bị xung đột và gán giá trị làm giảm tối thiểu số lượng vi phạm ràng buộc.
+
+### 2. Trình Giải Cờ Caro Tic-Tac-Toe (Adversarial Search)
+Mô phỏng một trò chơi đối kháng kinh điển trên bàn cờ kích thước $3 \times 3$ giữa Người chơi (Quân O) và Trí tuệ nhân tạo (Quân X) từ một thế cờ khởi tạo có sẵn.
+* **Tính năng chính:** Giao diện bàn cờ thân thiện, cơ chế khóa ô thông minh sau khi đánh, tự động thông báo kết quả Thắng/Thua/Hòa ngay khi đạt trạng thái kết thúc. Người dùng có thể linh hoạt chuyển đổi thuật toán để so sánh sức mạnh tính toán của AI.
+* **Các thuật toán tích hợp:**
+    * **Minimax:** Duyệt toàn bộ cây trò chơi để đưa ra quyết định tối ưu tuyệt đối cho AI.
+    * **Alpha-Beta Pruning:** Tối ưu hóa thuật toán Minimax bằng cách cắt tỉa các nhánh không làm ảnh hưởng đến kết quả cuối cùng, tăng tốc độ xử lý một cách vượt trội.
+    * **Expectimax:** Phù hợp cho môi trường có tính đến xác suất ngẫu nhiên hoặc hành vi không tối ưu từ phía đối thủ.
+
+### 3. Hệ Thống Mô Phỏng Agent Máy Hút Bụi (Advanced Search Algorithms)
+Một nền tảng giả lập cao cấp, trực quan hóa cách thức di chuyển và xử lý của một Robot thông minh (Agent) thực hiện nhiệm vụ quét dọn toàn bộ các ô rác trên lưới ma trận $3 \times 3$.
+* **Tính năng điều khiển:** Bảng điều khiển tích hợp toàn diện gồm: Tạo sàn ngẫu nhiên, Bắt đầu mô phỏng, Tạm dừng/Tiếp tục, Hủy chạy, cấu hình giới hạn độ sâu cắt (Cutoff) và khu vực hiển thị Log hành động chi tiết (`UP`, `DOWN`, `LEFT`, `RIGHT`, `CLEAN`) theo từng bước thời gian.
+* **Hệ thống thuật toán đồ sộ tích hợp:**
+    * **Tìm kiếm mù (Uninformed Search):** Định dạng BFS (Kiểu 1 & 2), DFS (Kiểu 1 & 2), Tìm kiếm sâu dần IDS (Kiểu 1 & 2) và Tìm kiếm chi phí đồng nhất UCS.
+    * **Tìm kiếm có thông tin (Informed Search):** Tìm kiếm tham lam (Greedy Search) và Thuật toán tối ưu A*, IDA* dựa trên khoảng cách Manhattan đến các ô có rác.
+    * **Tìm kiếm cục bộ (Local Search):** Các biến thể Leo Đồi (Simple Hill Climbing, Steepest Ascent HC, Stochastic HC, Random Restart HC), Tìm kiếm chùm cục bộ (Local Beam Search), và thuật toán Mô phỏng Luyện Kim (Simulated Annealing).
+    * **Môi trường đặc biệt (Belief & Nondeterministic):** Tìm kiếm trong không gian niềm tin toàn phần/một phần (Belief Space Search) áp dụng khi Agent không có thông tin hoàn hảo về vị trí, và thuật toán Tìm kiếm đồ thị AND-OR trong điều kiện môi trường bất định.
 
 ---
 
-## 💻 Hướng dẫn Cài đặt và Chạy ứng dụng
+## 📂 Cấu Trúc Mã Nguồn
 
-### Yêu cầu hệ thống
-- Máy tính đã cài đặt **Python 3.x**.
-- Môi trường chạy mã nguồn **Jupyter Notebook** hoặc **Visual Studio Code** (đã cài extension Jupyter).
-
-### Các thư viện sử dụng
-Các thư viện cốt lõi đều là thư viện chuẩn của Python:
-```bash
-# Thư viện giao diện và cấu trúc dữ liệu nền tảng
-tkinter
-collections (deque)
-heapq
-random
-time
+```text
+├── .idea/
+├── Visualizer/
+├── README.md
+├── bfs_8_puzzle.ipynb
+├── main.py
+├── model_8_puzzle.ipynb
+├── model_vaccum.ipynb
+├── simple_8_puzzle.ipynb
+├── simple_vacuum.ipynb
+└── vacuum.ipynb
